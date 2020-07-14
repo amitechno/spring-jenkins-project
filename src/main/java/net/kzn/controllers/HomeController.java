@@ -11,7 +11,7 @@ public class HomeController {
 	@RequestMapping(value = {"/", "/home", "/default", "/index"}, method = RequestMethod.GET)
 	public ModelAndView home() {
 		ModelAndView mv = new ModelAndView("index");
-		mv.addObject("title", "Just Enough Jenkins Training!");
+		mv.addObject("title", "JustEnough Jenkins Training!");
 		mv.addObject("greeting", "Welcome to Enough Jenkins Training!");
 		return mv;
 	}
