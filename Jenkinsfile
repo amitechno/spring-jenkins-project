@@ -33,7 +33,7 @@ pipeline {
             }
         }
         stage('SonarQube analysis') {
-        def scannerHome = tool 'Sonar Scanner;
+        def scannerHome = tool 'Sonar Scanner';
         withSonarQubeEnv('Sonarqube') { // If you have configured more than one global server connection, you can specify its name
         sh "mvn sonar:sonar"
     }
