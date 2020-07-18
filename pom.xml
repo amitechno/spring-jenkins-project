@@ -17,7 +17,7 @@
 		<surefire.version>2.22.2</surefire.version>
 		<war.version>3.2.3</war.version>
 		<compiler.version>3.8.1</compiler.version>
-	
+
 		<!-- Cobertura SonarQube Setup -->
 	 <sonar.core.codeCoveragePlugin>cobertura</sonar.core.codeCoveragePlugin>
 	 <sonar.java.coveragePlugin>cobertura</sonar.java.coveragePlugin>
@@ -100,6 +100,14 @@
 						<format>xml</format>
 					</formats>
 				</configuration>
+				<executions>
+     			<execution>
+        	<phase>package</phase>
+        	<goals>
+           	<goal>cobertura</goal>
+	        </goals>
+     			</execution>
+  			</executions>
 			</plugin>
 
 		</plugins>
