@@ -22,7 +22,7 @@ pipeline {
             }
         }
 
-        stage('Application_Unit_Test'){
+      /*  stage('Application_Unit_Test'){
             steps {
                 sh label: '', script: 'mvn compiler:testCompile -Dfilename=testng-unit.xml surefire:test'
             }
@@ -31,10 +31,10 @@ pipeline {
                     step([$class: 'Publisher'])
                 }
             }
-        }
+        }*/
         stage('Code Coverage'){
             steps {
-                sh label: '', script: 'mvn cobertura:cobertura'
+                sh label: '', script: 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
             }
             post{
                 always{
