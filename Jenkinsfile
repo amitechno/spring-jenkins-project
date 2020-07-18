@@ -22,7 +22,7 @@ pipeline {
             }
         }
 
-      /*  stage('Application_Unit_Test'){
+        stage('Application_Unit_Test'){
             steps {
                 sh label: '', script: 'mvn compiler:testCompile -Dfilename=testng-unit.xml surefire:test'
             }
@@ -31,7 +31,7 @@ pipeline {
                     step([$class: 'Publisher'])
                 }
             }
-        }*/
+        }
         stage('Package') {
             steps {
                 sh label: '', script: 'mvn clean package -DskipTests'
