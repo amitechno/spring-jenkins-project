@@ -42,14 +42,14 @@ pipeline {
                 }
             }
         }
-  /*      stage('SonarQube analysis') {
+        stage('SonarQube analysis') {
         steps {
         withSonarQubeEnv('Sonarqube') { // If you have configured more than one global server connection, you can specify its name
         sh "mvn sonar:sonar"
         }
       }
 
-  }*/
+  }
         stage('Package') {
             steps {
                 sh label: '', script: 'mvn clean package -DskipTests'
