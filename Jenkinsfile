@@ -34,6 +34,7 @@ pipeline {
         }*/
         stage('Code Coverage'){
             steps {
+                sh 'mvn dependency::tree'
                 sh label: '', script: 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
             }
             post{
