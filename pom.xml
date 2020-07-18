@@ -16,7 +16,7 @@
 		<!-- maven-plugin-version -->
 		<surefire.version>2.22.2</surefire.version>
 		<war.version>3.2.3</war.version>
-		<compiler.version>3.8.1</compiler.version>	
+		<compiler.version>3.8.1</compiler.version>
 	</properties>
 
 
@@ -81,6 +81,13 @@
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
+			<!-- Sonarqube -->
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.3.0.603</version>
+			</plugin>
+
 		</plugins>
 	</build>
 </project>
