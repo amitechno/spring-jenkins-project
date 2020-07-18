@@ -35,7 +35,7 @@ pipeline {
         stage('Code Coverage'){
             steps {
                 sh 'mvn clean install -U'
-                sh label: '', script: 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
+                sh label: '', script: 'mvn cobertura:cobertura -Dsurefire.suiteXmlFiles=myCustomSuite.xml'
             }
             post{
                 always{
