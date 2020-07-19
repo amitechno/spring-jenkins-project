@@ -24,6 +24,7 @@
 	 <sonar.junit.reportsPath>${project.basedir}/target/surefire-reports</sonar.junit.reportsPath>
 	 <sonar.surefire.reportsPath>${project.basedir}/target/surefire-reports</sonar.surefire.reportsPath>
 	 <sonar.cobertura.reportPath>${project.basedir}/target/site/cobertura/coverage.xml</sonar.cobertura.reportPath>
+	 <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/target/site/cobertura/coverage.xml</sonar.coverage.jacoco.xmlReportPaths>
 
 	</properties>
 
