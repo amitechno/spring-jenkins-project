@@ -19,13 +19,10 @@
 		<compiler.version>3.8.1</compiler.version>
 
 		<!-- Cobertura SonarQube Setup -->
-	 <sonar.core.codeCoveragePlugin>cobertura</sonar.core.codeCoveragePlugin>
+	 <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
 	 <sonar.java.coveragePlugin>cobertura</sonar.java.coveragePlugin>
-	 <sonar.junit.reportsPath>${project.basedir}/target/surefire-reports</sonar.junit.reportsPath>
-	 <sonar.surefire.reportsPath>${project.basedir}/target/surefire-reports</sonar.surefire.reportsPath>
-	 <sonar.cobertura.reportPath>${project.basedir}/target/site/cobertura/coverage.xml</sonar.cobertura.reportPath>
-	 <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/target/site/cobertura/coverage.xml</sonar.coverage.jacoco.xmlReportPaths>
-
+	 <sonar.junit.reportsPath>target/site</sonar.junit.reportsPath>
+	 <sonar.cobertura.reportPath>target/site/cobertura/coverage.xml</sonar.cobertura.reportPath>
 	</properties>
 
 
