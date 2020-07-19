@@ -45,7 +45,7 @@ pipeline {
         steps {
          sh 'ls -lrt'
         withSonarQubeEnv('Sonarqube') { // If you have configured more than one global server connection, you can specify its name
-        sh "mvn sonar:sonar -D.sonar.cobertura.reportPath=/target/site/cobertura/coverage.xml"
+        sh "mvn sonar:sonar -D.sonar.cobertura.reportPath=target/site/cobertura/coverage.xml"
         }
       }
 
