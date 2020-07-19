@@ -51,7 +51,7 @@ pipeline {
 
   }
 
-  stage('SonarQube analysis') {
+  stage('SonarQube quality gate') {
   steps {
     script{
     timeout(time: 3, unit: 'MINUTES') {
