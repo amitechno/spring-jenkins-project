@@ -24,7 +24,7 @@ pipeline {
 
        stage('Application_Unit_Test'){
             steps {
-                sh label: '', script: 'mvn compiler:testCompile -Dfilename=testng-unit.xml surefire:test -Dcobertura.report.format=xml'
+                sh label: '', script: 'mvn compiler:testCompile -Dfilename=testng-unit.xml surefire:test'
             }
             post{
                 always{
@@ -35,7 +35,7 @@ pipeline {
         stage('Code Coverage'){
             steps {
 
-                sh 'mvn cobertura:cobertura -Dsurefire.suiteXmlFiles=testng-unit.xml'
+                sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml -Dsurefire.suiteXmlFiles=testng-unit.xml '
             }
 
         }
