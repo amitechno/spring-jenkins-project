@@ -22,7 +22,7 @@ pipeline {
             }
         }
 
-      /*  stage('Application_Unit_Test'){
+      / stage('Application_Unit_Test'){
             steps {
                 sh label: '', script: 'mvn compiler:testCompile -Dfilename=testng-unit.xml surefire:test'
             }
@@ -31,11 +31,11 @@ pipeline {
                     step([$class: 'Publisher'])
                 }
             }
-        }*/
+        }
         stage('Code Coverage'){
             steps {
 
-                sh 'mvn cobertura:cobertura -Dsurefire.suiteXmlFiles=myCustomSuite.xml'
+                sh 'mvn cobertura:cobertura -Dsurefire.suiteXmlFiles=testng-unit.xml'
             }
             post{
                 always{
