@@ -37,6 +37,7 @@ pipeline {
 
                 //sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml -Dsurefire.suiteXmlFiles=testng-unit.xml '
                   sh ' mvn clean install cobertura:cobertura  -Dcobertura.report.format=xml -Dsurefire.suiteXmlFiles=testng-unit.xml'
+                  sh 'mvn site'
             }
 
         }
