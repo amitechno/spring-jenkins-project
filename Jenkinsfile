@@ -37,7 +37,7 @@ pipeline {
 
                 //sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml -Dsurefire.suiteXmlFiles=testng-unit.xml '
                   sh ' mvn clean install cobertura:cobertura  -Dcobertura.report.format=xml -Dsurefire.suiteXmlFiles=testng-unit.xml'
-                  sh 'cat target/site/cobertura/coverage.xml'
+                //  sh 'cat target/site/cobertura/coverage.xml'
             }
 
         }
@@ -50,6 +50,21 @@ pipeline {
       }
 
   }
+
+  stage('SonarQube analysis') {
+  steps {
+    script{
+    timeout(time: 3, unit: 'MINUTES') {
+      def qg = waitForQualityGate()
+      if (qg.status != 'OK'){
+        error "pipeline aborted due to quality gate failure: ${qg.status}"
+      }
+    }
+    }
+
+  }
+}
+
         stage('Package') {
             steps {
                 sh label: '', script: 'mvn clean package -DskipTests'
