@@ -37,7 +37,7 @@ pipeline {
 
                 //sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml -Dsurefire.suiteXmlFiles=testng-unit.xml '
                   sh ' mvn clean install cobertura:cobertura  -Dcobertura.report.format=xml -Dsurefire.suiteXmlFiles=testng-unit.xml'
-                  sh 'mvn site'
+                  sh 'cat target/site/cobertura/coverage.xml'
             }
 
         }
@@ -45,7 +45,7 @@ pipeline {
         steps {
          sh 'ls -lrt'
         withSonarQubeEnv('Sonarqube') { // If you have configured more than one global server connection, you can specify its name
-        sh "mvn sonar:sonar"
+        sh "mvn sonar:sonar -D.sonar.coverage.jacoco.xmlReportPaths=target/site/cobertura/coverage.xml"
         }
       }
 
