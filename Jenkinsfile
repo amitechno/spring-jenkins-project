@@ -35,7 +35,8 @@ pipeline {
         stage('Code Coverage'){
             steps {
 
-                sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml -Dsurefire.suiteXmlFiles=testng-unit.xml '
+                //sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml -Dsurefire.suiteXmlFiles=testng-unit.xml '
+                  sh 'clean install cobertura:cobertura sonar:sonar -Dcobertura.report.format=xml'
             }
 
         }
